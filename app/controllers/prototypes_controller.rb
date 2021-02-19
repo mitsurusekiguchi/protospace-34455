@@ -1,6 +1,6 @@
 class PrototypesController < ApplicationController
-  before_action :authenticate_user!, only: :show
-
+  before_action :authenticate_user!, only:[:new,:edit,:destroy]
+# authenticate_user!はログインしていないとログイン画面に遷移する⏫
   def index
     @prototypes = Prototype.all
   end
